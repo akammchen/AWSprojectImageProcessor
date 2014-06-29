@@ -1,4 +1,4 @@
-﻿
+
 var imageProc = ( function () {
 
     var sqs, s3;
@@ -29,8 +29,24 @@ var imageProc = ( function () {
 
 
     function convert(){
-        //TODO
-        uploadConvertedFile();
+	console.log('converting')
+        var fs = require('fs')
+			, gm = require('gm');
+		var path='./temp/temp'+processingImageData.Messages[0].Body.split( "|" )[0]+'.jpg';
+		var img=gm(path);
+		
+		if(processingImageData.Messages[0].Body.indexOf('negatyw')>-1)
+		img.negative();
+		
+		if(processingImageData.Messages[0].Body.indexOf('sepia')>-1)
+		img.sepia();
+		
+		img.write(path, function (err) {
+  if (!err) {
+  uploadConvertedFile();
+  }
+	});
+        
         }
 
 

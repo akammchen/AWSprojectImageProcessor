@@ -1,13 +1,1 @@
-{
-  "name": "imageProc",
-  "version": "0.0.0",
-  "description": "imageProc",
-  "main": "server.js",
-  "author": {
-    "name": "Krzys",
-    "email": ""
-  },
-  "dependencies": {
-	"aws-sdk": "~2.0.0-rc9",
-  }
-}
+{"name": "imageProc",  "version": "0.0.0",  "description": "imageProc",  "main": "server.js",  "author": {    "name": "Krzys",    "email": ""  },  "dependencies": {	"aws-sdk": "~2.0.0-rc9","gm" :"*" }}
