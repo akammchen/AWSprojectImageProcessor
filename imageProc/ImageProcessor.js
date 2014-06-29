@@ -16,7 +16,7 @@ var imageProc = ( function () {
         
         var params = {
         Bucket: BUCKETkk, // required
-        Key: (processingImageData.Messages[0].Body.split( "|" )[0]+"cv"), // required
+        Key: (processingImageData.Messages[0].Body.split( "|" )[1]), // required
         Body: data,
         };
         s3.putObject(params, function(err, data) {
